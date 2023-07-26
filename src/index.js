@@ -17,7 +17,6 @@ let months = [
 let day = days[now.getDay()];
 let month = months[now.getMonth()];
 let date = now.getDate();
-let year = now.getFullYear();
 let hours = now.getHours();
 let minutes = now.getMinutes();
 let amPm = hours >= 12 ? "PM" : "AM";
@@ -25,7 +24,7 @@ hours = hours % 12 || 12;
 minutes = minutes < 10 ? "0" + minutes : minutes;
 
 let dateElement = document.querySelector("#date");
-dateElement.textContent = `${day} ${month} ${date}, ${year} ${hours}:${minutes} ${amPm}`;
+dateElement.textContent = `${day} ${month} ${date}, ${hours}:${minutes} ${amPm}`;
 
 function displayWeatherSearch(response) {
   document.querySelector("#city").innerHTML = response.data.name;
