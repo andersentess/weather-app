@@ -1,22 +1,7 @@
 let now = new Date();
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
+
 let day = days[now.getDay()];
-let month = months[now.getMonth()];
-let date = now.getDate();
 let hours = now.getHours();
 let minutes = now.getMinutes();
 let amPm = hours >= 12 ? "PM" : "AM";
@@ -24,7 +9,7 @@ hours = hours % 12 || 12;
 minutes = minutes < 10 ? "0" + minutes : minutes;
 
 let dateElement = document.querySelector("#date");
-dateElement.textContent = `${day} ${month} ${date}, ${hours}:${minutes} ${amPm}`;
+dateElement.textContent = `${day} ${hours}:${minutes} ${amPm}`;
 
 function displayWeatherSearch(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -39,6 +24,12 @@ function displayWeatherSearch(response) {
     response.data.wind.speed + " km/h";
   document.querySelector("#weatherDescription").innerHTML =
     response.data.weather[0].description;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(event) {
