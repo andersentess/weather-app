@@ -20,8 +20,9 @@ function displayWeatherSearch(response) {
     response.data.clouds.all + "%";
   document.querySelector("#humidity").innerHTML =
     response.data.main.humidity + "%";
-  document.querySelector("#wind").innerHTML =
-    response.data.wind.speed + " km/h";
+
+  let windSpeed = Math.round(response.data.wind.speed);
+  document.querySelector("#wind").innerHTML = windSpeed + " km/h";
   document.querySelector("#weatherDescription").innerHTML =
     response.data.weather[0].description;
   let iconElement = document.querySelector("#icon");
