@@ -66,3 +66,16 @@ footer {
   text-decoration: none;
   color: #0a5ed7;
 }
+
+.weather-details .active {
+  color: rgb(33, 33, 33);
+  text-decoration: none;
+}
+.weather-details .active:hover {
+  text-decoration: none;
+  cursor: default;
+}
+.weather-details a {
+  text-decoration: none;
+  color: rgb(33, 33, 33);
+}
