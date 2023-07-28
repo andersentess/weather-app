@@ -28,6 +28,7 @@ li:first-letter {
 
 footer {
   text-align: center;
+  font-size: 14px;
 }
 
 .weather-app {
@@ -64,7 +65,8 @@ footer {
 }
 .github {
   text-decoration: none;
-  color: #0a5ed7;
+  color: black;
+  text-align: center;
 }
 
 .weather-details .active {
@@ -78,4 +80,20 @@ footer {
 .weather-details a {
   text-decoration: none;
   color: blue;
+}
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
 }
