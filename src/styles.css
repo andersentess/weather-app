@@ -32,7 +32,7 @@ footer {
 }
 
 .weather-app {
-  border: 1px solid #dadde1;
+  border: 3px solid #dadde1;
   padding: 15px;
   margin: 20px auto;
   border-radius: 10px;
@@ -65,22 +65,9 @@ footer {
 }
 .github {
   text-decoration: none;
-  color: black;
   text-align: center;
 }
 
-.weather-details .active {
-  color: rgb(33, 33, 33);
-  text-decoration: none;
-}
-.weather-details .active:hover {
-  text-decoration: none;
-  cursor: default;
-}
-.weather-details a {
-  text-decoration: none;
-  color: blue;
-}
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
