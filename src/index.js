@@ -106,10 +106,19 @@ function searchCity(city) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
-function searchLocation(position) {
+function searchCity(city) {
   let apiKey = "7784a4cd4aa2e0c25ead7bd96d585b8a";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherSearch);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios
+    .get(apiUrl)
+    .then(displayWeatherSearch)
+    .catch((error) => {
+      if (error.response && error.response.status === 404) {
+        alert("City not found. Please check your spelling and try again.");
+      } else {
+        alert("An error occurred. Please try again later.");
+      }
+    });
 }
 
 function getCurrentLocation(event) {
