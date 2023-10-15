@@ -121,6 +121,12 @@ function searchCity(city) {
     });
 }
 
+function searchLocation(position) {
+  let apiKey = "7784a4cd4aa2e0c25ead7bd96d585b8a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherSearch);
+}
+
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
